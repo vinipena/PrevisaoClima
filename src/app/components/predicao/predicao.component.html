@@ -1,0 +1,68 @@
+<div class="input-wrapper">
+  <form [formGroup]="formPrevisao" (submit)="gerarPredicao()">
+    <span class="form-wrapper">
+      <label for="data">Informe a data de busca:</label>
+      <input id="data" formControlName="data" type="date" />
+    </span>
+    <button mat-stroked-button>Prever</button>
+  </form>
+
+  <div class="predicao-wrapper">
+    <div class="predicao-card" *ngIf="predicao">
+      <h3>Previsão Climática</h3>
+      <p><strong>Data: </strong> {{ predicao.data | date : "MM/dd" }}</p>
+      <p>
+        <strong>Probabilidade de Evento Atípico:</strong>
+        {{ predicao.probabilidadeEventoAtipico }} %
+      </p>
+      <p>
+        <strong>Temperatura Abaixo da Média:</strong>
+        {{ predicao.isTemperaturaAbaixoMedia ? "Sim" : "Não" }}
+      </p>
+      <p *ngIf="predicao.isTemperaturaAbaixoMedia">
+        <strong>Temperatura Abaixo da Média Obtida:</strong>
+        {{ predicao.temperaturaAbaixoMediaObtida }} °C
+      </p>
+
+      <p *ngIf="predicao.isTemperaturaAcimaMedia">
+        <strong>Temperatura Acima da Média Obtida:</strong>
+        {{ predicao.temperaturaAcimaMediaObtida }} °C
+      </p>
+      <p>
+        <strong>Precipitação Acima da Média:</strong>
+        {{ predicao.isPrecipitacaoAcimaMedia ? "Sim" : "Não" }}
+      </p>
+      <p>
+        <strong>Vento Acima da Média:</strong>
+        {{ predicao.isVentoAcimaMedia ? "Sim" : "Não" }}
+      </p>
+      <p><strong>Valores médios para o periodo histórico:</strong></p>
+      <ul>
+        <li>
+          <p>
+            Temperatura Mínima:
+            {{ predicao.temperaturaMinimaMedia }} °C
+          </p>
+        </li>
+        <li>
+          <p>
+            Temperatura Máxima:
+            {{ predicao.temperaturaMaximaMedia }} °C
+          </p>
+        </li>
+        <li>
+          <p>
+            Precipitação Média:
+            {{ predicao.precipitacaoMedia }} mm
+          </p>
+        </li>
+        <li>
+          <p>
+            Vento Médio:
+            {{ predicao.ventoMedia }} km/h
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="historico-wrapper">
+  <form [formGroup]="formHistorico">
+    <div class="form-wrapper">
+      <label>Escolha o gráfico:</label>
+      <select #selectGrafico formControlName="grafico" name="chartType">
+        <option value="1">Tendência temperatura anual</option>
+        <option value="2">Tendência precipitação anual</option>
+        <option value="3">Tendência precipitação geral</option>
+        <option value="4">Média temperatura</option>
+        <option value="5">Precipitação mensal</option>
+        <option value="6">Rosa dos ventos</option>
+      </select>
+    </div>
+    <div class="form-wrapper">
+      <label>Escolha o ano de referência:</label>
+      <input
+        [disabled]="+selectGrafico.value !== 6 && +selectGrafico.value !== 3"
+        formControlName="ano"
+        type="number"
+        id="year"
+        name="year"
+        min="1900"
+        max="2100"
+        required
+      />
+    </div>
+    <button (click)="buscarGrafico()" mat-stroked-button>Buscar</button>
+  </form>
+  <div class="grafico-wrapper" *ngIf="historicoService.imageUrl">
+    <img [src]="historicoService.imageUrl" alt="Gráfico de Tendência" />
+  </div>
+</div>

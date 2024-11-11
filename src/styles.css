@@ -1,1 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-size: 100%;
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+  --primary-color: #1976d2;
+  --primary-light-color: #63a4ff;
+  --primary-dark-color: #004ba0;
+  --accent-color: #ff4081;
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #000000;
+  --divider-color: #bdbdbd;
+}
+
+body {
+  background-color: var(--primary-light-color);
+
+}
+/*
+a {
+  color: var(--accent-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--primary-dark-color);
+} */
+
+
+/* CUSTOMIZAÇÃO ESTILOS ANGULAR MATERIAL */
+.mat-mdc-tab {
+  flex-grow: 0 !important;
+}
+
+.mdc-tab__text-label{
+  font-size: 1.5em !important;
+  color: var(--primary-color) !important;
+}

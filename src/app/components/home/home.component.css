@@ -1,0 +1,38 @@
+.home-content {
+  width: 80%;
+  height: 100%;
+  border: 1px solid var(--primary-dark-color);
+  box-shadow: 0 10px 10px var(--primary-dark-color);
+  border-radius: 4px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  gap: 2em;
+}
+header .logo {
+  width: 250px;
+  height: 100px;
+  margin-right: 1em;
+}
+header .icon {
+  width: 100px;
+  height: 100px;
+}
+.home-content .home-title {
+  font-size: 2em;
+  color: var(--primary-color);
+  margin-bottom: 1em;
+}
+.home-content .home-subtitle {
+  font-size: 1.5em;
+  color: var(--primary-color);
+  margin-bottom: 1em;
+}

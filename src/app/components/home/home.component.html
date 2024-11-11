@@ -1,0 +1,23 @@
+<div class="home-content">
+  <header>
+    <img class="icon" src="./src/img/icon.png" alt="icone de eventos climaticos">
+    <span>
+      <div class="home-title">Seja bem-vindo à Clima App</div>
+      <p class="home-subtitle">Escolha uma das opções para começar.</p>
+    </span>
+    <img class="logo" src="./src/img/logo.png" alt="logo univesp">
+  </header>
+
+
+  <mat-tab-group [color]="'primary'" [disableRipple]="false">
+
+    <mat-tab label="Previsão">
+      <main>
+        <app-predicao></app-predicao>
+      </main>
+    </mat-tab>
+    <mat-tab label="Histórico">
+      <app-historico></app-historico>
+    </mat-tab>
+  </mat-tab-group>
+</div>
