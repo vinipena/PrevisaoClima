@@ -35,7 +35,7 @@ export class HttpClientService {
 
   getPrevisao(dia: number, mes: number) {
     //Exemplo http://localhost:8000/previsao/31_12
-    return this.http.get<Predicao>(this.urlPrevisao + dia + '/' + mes).toPromise();
+    return this.http.get<Predicao>(this.urlPrevisao + dia + '_' + mes).toPromise();
   }
 
   getEventos() {
